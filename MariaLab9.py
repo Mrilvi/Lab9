@@ -5,6 +5,7 @@ Working with Allan Rivera - Jaramillo
 
 '''
 
+
 # encode password function by Maria Ilieva
 def encode(password):
     pass_encoded = ""
@@ -13,9 +14,21 @@ def encode(password):
         pass_encoded += shifted_num
     return pass_encoded
 
+
 # decode password function to be written by Allan Rivera - Jaramillo
 def decode(password):
-    pass
+    x = list(password)
+    y = [eval(i) for i in x]
+    z = []
+    for i in range(len(y)):
+        z.append(y[i] - 3)
+    for i in range(len(z)):
+        if z[i] < 0:
+            z[i] = z[i] + 10
+    z = [str(i) for i in z]
+    return ''.join(z)
+    return z
+
 
 # main program by Maria Ilieva
 if __name__ == '__main__':
@@ -49,5 +62,3 @@ if __name__ == '__main__':
         # quit program
         elif menu_choice == "3":
             break
-
-
